@@ -5,8 +5,16 @@ import TechSection from "@/components/sections/tech-section";
 import { getCV } from "@/lib/sanity";
 import IntroductionSection from "@/components/sections/introduction-section";
 
+export async function generateMetadata() {
+  const { baseinformation } = await getCV();
+  return {
+    title: `${baseinformation.name} - ${baseinformation.role}`,
+  };
+}
+
 export default async function Home() {
   const cv = await getCV();
+
   return (
     <div className="flex flex-col space-y-8">
       <IntroductionSection text={cv.introduction} />
