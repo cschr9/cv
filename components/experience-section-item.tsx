@@ -17,7 +17,7 @@ const ExperienceSectionItem = ({ data }: Props) => {
       )}
     >
       <div className="flex space-x-4 items-center">
-        <div className="flex h-12 w-12 p-1 rounded-lg bg-white items-center justify-center">
+        <div className="flex h-12 p-1 rounded-lg bg-white items-center justify-center aspect-square">
           <Image src={data.logo} alt={data.company} width={64} height={64} />
         </div>
         <div className="flex flex-col group-hover:-translate-y-8 transition-all duration-200 ease-in">
@@ -27,12 +27,12 @@ const ExperienceSectionItem = ({ data }: Props) => {
             </div>
             <div className="font-medium">{data.company}</div>
           </div>
-          <div className="absolute -bottom-6 w-[560px] opacity-0 group-hover:opacity-100 duration-500">
+          <div className="h-0 opacity-0 group-hover:opacity-100 duration-500">
             <p>{data.description}</p>
           </div>
         </div>
       </div>
-      <div className="flex flex-col text-xs text-right space-y-1 justify-center">
+      <div className="flex flex-col w-1/4 text-xs text-right space-y-1 justify-center">
         <div>
           {data.current ? (
             <span className="bg-slate-50 dark:bg-slate-950 text-slate-500 rounded-md px-2 py-1">
